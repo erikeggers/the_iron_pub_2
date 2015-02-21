@@ -7,7 +7,6 @@
 </head>
 <body>
 
-
 <div class="app-container">
 
   <h1> The Iron Pub </h1>
@@ -17,30 +16,83 @@
   <h2><a href="#category/stout">Stout</a></h2>
 
   <div class="items-container">
-    <ul class="items"></ul>
+    <ul class="item-container"></ul>
   </div>
   <div class="order-container"></div>
 
 </div>
 
+<!-- <script type="text/template" id="item-detail-template">
+
+</script> -->
 
 <script type="text/template" id="item-detail-template">
-<li>Item $10.00<button>Add</add>
+  <%= itemName %> <%= itemPrice %>
+  <p><%= itemDescription %></p>
+  <button>Add</button>
 </script>
 
+<!-- <div class="before">
+  <ul>
+    <li>Smothered tots of gold<button>Add</button></li>
+    <li>Pretzel bites with beer cheese fondue<button>Add</button></li>
+    <li>Finger lickin’ chicken wings</li>
+    <li>Black n tan onion rings</li>
+    <li>Veggies with farm fresh goat cheese</li>
+    <li>Fried green tomatoes with homemade pimiento cheese</li>
+    <li>Hand breaded fried pickles</li>
+  </ul>
+</div>
+
+<div class="soups and salads">
+  <h3>Soups and Salad</h3>
+  <ul>
+    <li>Creamy Irish potato soup</li>
+    <li>Soup of the day</li>
+    <li>Countryside salad</li>
+    <li>Wild caught North Atlantic salmon salad</li>
+    <li>Side salad</li>
+  </ul>
+</div>
+
+<div class="sandwhiches-and-such">
+  <h3>Sandwiches and Such</h3>
+  <ul>
+    <li>The American</li>
+    <li>Farm</li>
+    <li>Carolina</li>
+    <li>The doughnut burger</li>
+    <li>Open faced reuben</li>
+    <li>The kahiki</li>
+    <li>Jay’s calabash chicken fingers</li>
+  </ul>
+</div>
+
+<div class="stout">
+  <h3>Stout</h3>
+  <ul>
+    <li>Guinness stew</li>
+    <li>Anytime Irish breakfast </li>
+    <li>Shepherd’s pie</li>
+    <li>Fish and Chips</li>
+    <li>Balsamic glazed Wild caught North Atlantic salmon</li>
+    <li>Shrimp and Grits</li>
+    <li>Blackberry sage pork medallions</li>
+    <li>The McAbee Ribeye</li>
+  </ul>
+</div>
+
+</script> -->
 
 <script type="text/template" id="order-detail-template">
 
 <h3>Order Info</h3>
-<p>Total: 12.35</p>
+<p>Total: $20.35</p>
 <button>Checkout</button>
 
 </script>
 
 
-<!-- <%= itemName %> <%= itemPrice %>
-<p><%= itemDescription %></p>
-<button>Add</button> -->
 
 
 
