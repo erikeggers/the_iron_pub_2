@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Iron Pub</title>
+  <link href="styles/main.css" />
+</head>
+<body>
+
+
+<div class="app-container">
+
+  <h1> The Iron Pub </h1>
+  <h2><a href="#category/before">Before</a></h2>
+  <h2><a href="#category/soup-and-salad">Soup and Salads</a></h2>
+  <h2><a href="#category/sandwiches-and-such">Sandwiches and Such</a></h2>
+  <h2><a href="#category/stout">Stout</a></h2>
+
+  <div class="items-container">
+    <ul class="items"></ul>
+  </div>
+  <div class="order-container"></div>
+
+</div>
+
+
+<script type="text/template" id="item-detail-template">
+<li>Item $10.00<button>Add</add>
+</script>
+
+
+<script type="text/template" id="order-detail-template">
+
+<h3>Order Info</h3>
+<p>Total: 12.35</p>
+<button>Checkout</button>
+
+</script>
+
+
+<!-- <%= itemName %> <%= itemPrice %>
+<p><%= itemDescription %></p>
+<button>Add</button> -->
+
+
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/backbone/backbone.js"></script>
+
+<script type="text/javascript" src="scripts/main.js"></script>
+
+</body>
+</html>
