@@ -28,14 +28,10 @@ var MenuItemsCollection = Backbone.Collection.extend({
   }
 });
 
-// -------------
-// Organized Category
-// -------------
-var OrganizedItemsCollection = Backbone.Collection.extend({
+var CategoryCollection = Backbone.Collection.extend({
   model: MenuItemModel,
-
-
 });
+
 // -------------
 // Order Collection
 // -------------
@@ -101,10 +97,8 @@ var AppRouter = Backbone.Router.extend({
 
   initialize: function(){
     this.items = new MenuItemsCollection();
-    // this.menuListView = new MenuListView({collection: this.items});
-    // this.menuItemView = new MenuItemView({collection: this.items});
 
-    this.orderList = new OrderCollection();
+    // this.orderList = new OrderCollection();
   },
 
 
@@ -116,24 +110,18 @@ var AppRouter = Backbone.Router.extend({
     $('.order-container').html(orderTemplate);
   },
 
-  // category: function(category){
-  //   var self = this;
-  //   this.items.fetch().done(function (){
-  //     var organizedFood = self.items.where({itemCategory: category});
-  //     self.items = new MenuItemsCollection(organizedFood);
-  //     console.log(organizedFood);
-  // });
-  //
-  // }
-
   category: function(category){
     var self = this;
     this.items.fetch().done(function (){
       var organizedFood = self.items.where({itemCategory: category});
-       var organizedCollection = new OrganizedItemsCollection(organizedFood);
-       var itemsView = new MenuItemView({collection: organizedCollection});
-     });
-   }
+      var organizedCollection = new CategoryCollection(organizedFood);
+      var menuListView = new MenuListView({collection: organizedCollection});
+      menuListView.render();
+
+  });
+
+  }
+
 });
 
 // -------------
