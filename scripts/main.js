@@ -103,14 +103,6 @@ var AppRouter = Backbone.Router.extend({
     this.orderList = new OrderCollection();
   },
 
-  foodCategories: function(){
-    return this.items.groupBy(function(model){
-      return model.get('itemCategory');
-
-  });
-
-
-  },
 
   index: function(){
 
@@ -123,9 +115,8 @@ var AppRouter = Backbone.Router.extend({
   category: function(category){
     var self = this;
     this.items.fetch().done(function (){
-    var organizedFood = self.foodCategories()[category];
+      var organizedFood = self.items.where({itemCategory: category});
       console.log(organizedFood);
-
   });
 
   }
