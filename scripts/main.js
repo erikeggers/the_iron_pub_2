@@ -23,7 +23,7 @@ var MenuItemsCollection = Backbone.Collection.extend({
   url: "https://api.parse.com/1/classes/categories",
 
   parse: function(response){
-    console.log(response);
+    // console.log(response);
     return response.results;
   }
 });
@@ -36,10 +36,6 @@ var OrderCollection = Backbone.Collection.extend({
 
   url: "https://api.parse.com/1/classes/orders",
 
-  parse: function(response){
-    console.log(response);
-    return response.results;
-  }
 });
 
 
@@ -116,6 +112,7 @@ var AppRouter = Backbone.Router.extend({
     var self = this;
     this.items.fetch().done(function (){
       var organizedFood = self.items.where({itemCategory: category});
+      self.items = new MenuItemsCollection(organizedFood);
       console.log(organizedFood);
   });
 
